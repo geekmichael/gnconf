@@ -190,7 +190,7 @@
         }
         if($count==0){
             $total_msg .= "Error generating config";
-            $status = "error";
+            //$status = "error";
         }
 
 
@@ -271,7 +271,7 @@
         }
         // Remove generated config
         system("rm -rf ".NCONFDIR."/temp/*");
-        $content = "Deployment not possible due to errors in configuration.";
+        $content = "Deployment not possible due to errors in configuration. $status";
         echo NConf_HTML::limit_space(
             NConf_HTML::show_error('Error', $content)
         );
